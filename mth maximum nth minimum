@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{
+	int i,n,a[100],min,max,temp,j,sum=0,difference;
+	printf("enter the no.of elements: ");
+	scanf("%d",&n);
+	printf("enter the elements :");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n-1;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(a[i]>a[j])
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	printf("after sorting: ");
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	printf("\nenter the m value: ");
+	scanf("%d",&max);
+	printf("enter the n value: ");
+	scanf("%d",&min);
+	printf("%dth max is %d",max,a[n-max]);
+	printf("\n%dth min is %d",min,a[min-1]);
+	sum=min+max;
+	difference=max-min;
+	printf("\nsum is %d",sum);
+	printf("\ndifference is %d",difference);
+}
